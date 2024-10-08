@@ -37,27 +37,27 @@ body {
 
 .nav-container {
   display: flex;
-  justify-content: flex-start; /* Ensures the items align left */
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  overflow-x: auto; /* Enables horizontal scrolling */
-  scrollbar-width: thin; /* For Firefox: thinner scrollbars */
-  -ms-overflow-style: none; /* For IE and Edge (old) */
+  overflow-x: auto;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
 }
 
 .nav-container::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar in Webkit browsers like Chrome */
+  display: none;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 25px;
-  justify-content: flex-start; /* Aligns items to the left */
+  justify-content: flex-start;
   align-items: center;
   padding: 0;
   margin: 0;
-  white-space: nowrap; /* Ensures items stay in one row */
+  white-space: nowrap;
 }
 
 .nav-links li {
@@ -87,7 +87,7 @@ body {
 /* Filter Icon */
 .filter-icon {
   cursor: pointer;
-  margin-left: auto; /* Pushes the filter icon to the end */
+  margin-left: auto;
 }
 
 /* Articles Layout */
@@ -138,7 +138,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1001; /* Make sure it’s above other content */
+  z-index: 1001;
 }
 
 .modal-content {
@@ -204,24 +204,23 @@ body {
   }
 
   .nav-container {
-    overflow-x: auto; /* Ensures horizontal scroll on small screens */
+    overflow-x: auto;
   }
 
   .nav-links {
-    flex-wrap: nowrap; /* Ensures navbar stays in one line */
-    gap: 15px; /* Adjust gap for smaller screens */
+    flex-wrap: nowrap;
+    gap: 15px;
   }
 
   .navbar {
     padding: 8px 0;
   }
 
-  /* Modal Styles for Smaller Screens */
   .filter-modal {
-    padding: 10px; /* Add some padding */
+    padding: 10px;
   }
 
   .modal-content {
-    width: 90%; /* Make modal content responsive */
+    width: 90%;
   }
 }
