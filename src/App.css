@@ -1,15 +1,16 @@
-
+/* Body Styles */
 body {
   padding-right: 15%;
   padding-left: 15%;
 }
 
+/* Discover Section */
 .discover-header {
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   align-items: center;
   background-color: white;
-  padding: 2px 0; 
+  padding: 2px 0;
   font-size: 14px;
 }
 
@@ -19,37 +20,44 @@ body {
 }
 
 .discover-header img {
-  width: 30px; 
+  width: 30px;
   height: 30px;
 }
 
-
+/* Navbar Styles */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #f7f7f7;
-  padding: 8px 0; 
-  margin-top: 5px; 
+  background-color: white;
+  padding: 8px 0;
+  margin-top: 5px;
+  width: 100%;
 }
 
 .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Ensures the items align left */
   align-items: center;
   width: 100%;
-  overflow-x: auto; 
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scrollbar-width: thin; /* For Firefox: thinner scrollbars */
+  -ms-overflow-style: none; /* For IE and Edge (old) */
+}
+
+.nav-container::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in Webkit browsers like Chrome */
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 25px;
-  justify-content: center;
+  justify-content: flex-start; /* Aligns items to the left */
   align-items: center;
   padding: 0;
   margin: 0;
-  white-space: nowrap; 
+  white-space: nowrap; /* Ensures items stay in one row */
 }
 
 .nav-links li {
@@ -68,13 +76,7 @@ body {
 }
 
 .nav-links a:hover {
-  background-color: rgba(0, 0, 0, 0.1); 
-}
-
-.nav-links a img {
-  margin-right: 8px;
-  width: 24px;
-  height: 24px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .nav-links a.active {
@@ -82,6 +84,13 @@ body {
   color: #000;
 }
 
+/* Filter Icon */
+.filter-icon {
+  cursor: pointer;
+  margin-left: auto; /* Pushes the filter icon to the end */
+}
+
+/* Articles Layout */
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -106,7 +115,7 @@ body {
 .vertical-card {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #f7f7f7;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
@@ -118,7 +127,73 @@ body {
   border-radius: 8px;
 }
 
+/* Modal Styles */
+.filter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001; /* Make sure it’s above other content */
+}
 
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Category Button Styles */
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.category-buttons button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.category-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.save-interest {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.save-interest:hover {
+  background-color: #218838;
+}
+
+/* Mobile responsive design */
 @media screen and (max-width: 768px) {
   .articles-grid {
     grid-template-columns: 1fr;
@@ -129,15 +204,24 @@ body {
   }
 
   .nav-container {
-    overflow-x: auto; 
+    overflow-x: auto; /* Ensures horizontal scroll on small screens */
   }
 
   .nav-links {
-    flex-wrap: nowrap; 
-    gap: 15px; 
+    flex-wrap: nowrap; /* Ensures navbar stays in one line */
+    gap: 15px; /* Adjust gap for smaller screens */
   }
 
   .navbar {
-    padding: 8px 0; 
+    padding: 8px 0;
+  }
+
+  /* Modal Styles for Smaller Screens */
+  .filter-modal {
+    padding: 10px; /* Add some padding */
+  }
+
+  .modal-content {
+    width: 90%; /* Make modal content responsive */
   }
 }
